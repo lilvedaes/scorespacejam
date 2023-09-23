@@ -5,13 +5,13 @@ using UnityEngine;
 public class EnemyBehaviour : MonoBehaviour
 {
 
-    Transform player;
+    protected Transform player;
 
     [SerializeField]
-    float speed, scaleFactor;
+    protected float speed, scaleFactor;
     
     [SerializeField]
-    int health, damage;
+    protected int health, damage;
 
     // Start is called before the first frame update
     void Start()

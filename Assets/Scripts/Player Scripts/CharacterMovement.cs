@@ -11,7 +11,7 @@ public class CharacterMovement : MonoBehaviour
 
     [SerializeField]
     private InputActionReference movement;
-
+    
     // Start is called before the first frame update
     void Start()
     {

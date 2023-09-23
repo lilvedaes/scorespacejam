@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   scaleFactor: 0.8
-  health: 20
+  health: 10
   damage: 20
 --- !u!58 &5768246959106632397
 CircleCollider2D:
