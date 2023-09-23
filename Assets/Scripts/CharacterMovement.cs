@@ -27,8 +27,8 @@ public class CharacterMovement : MonoBehaviour
         transform.Translate(movement.action.ReadValue<Vector2>() * movementSpeed * Time.deltaTime);
 
         // Orientation
-        lookDirection = pointerPosition.action.ReadValue<Vector2>() - (Vector2)Camera.main.WorldToScreenPoint(transform.position);
-        var angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        //lookDirection = pointerPosition.action.ReadValue<Vector2>() - (Vector2)Camera.main.WorldToScreenPoint(transform.position);
+        //var angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
+        //transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 }
