@@ -6,6 +6,7 @@ public class BirdBehaviour : EnemyBehaviour
 {
     private float waitTime;
     private Coroutine currentCoroutine;
+    private Vector2 direction;
 
     [SerializeField]
     private float sidewaysTimeMin, sidewaysTimeMax;
@@ -25,6 +26,10 @@ public class BirdBehaviour : EnemyBehaviour
         var direction = (player.position - transform.position).normalized;
         transform.Translate(direction * speed * Time.deltaTime);
 
+        // Look at player
+        direction = (player.position - transform.position).normalized;
+        transform.up = direction;
+
         waitTime = Random.Range(sidewaysTimeMin, sidewaysTimeMax);
         if (currentCoroutine == null)
             currentCoroutine = StartCoroutine(MoveSideways(waitTime));
@@ -33,7 +38,7 @@ public class BirdBehaviour : EnemyBehaviour
     // Every interval, randomize whether the bird is going to move sideways
     IEnumerator MoveSideways(float waitTime)
     {
-        Vector3 teleportDist = new Vector3(Random.Range(sidewaysDistanceMin, sidewaysDistanceMax), (Random.Range(sidewaysDistanceMin, sidewaysDistanceMax)), 0);
+        Vector3 teleportDist = new Vector3(Random.Range(sidewaysDistanceMin, sidewaysDistanceMax), 0, 0);
         transform.position = transform.position + teleportDist;
         yield return new WaitForSeconds(waitTime);
         currentCoroutine = null;
