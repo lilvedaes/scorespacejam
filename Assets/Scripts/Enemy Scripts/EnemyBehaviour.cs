@@ -8,14 +8,16 @@ public class EnemyBehaviour : MonoBehaviour
     Transform player;
 
     [SerializeField]
-    float speed, scaleFactor, health, damage;
+    float speed, scaleFactor;
+    
+    [SerializeField]
+    int health, damage;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         transform.localScale *= scaleFactor;
-        health = 100;
     }
 
     // Update is called once per frame
@@ -26,9 +28,20 @@ public class EnemyBehaviour : MonoBehaviour
     }
 
     // Lowers the health of the enemy on bullet impact
-    public void TakeDamage(float damage)
+    public void TakeDamage(int damage)
     {
         health -= damage;
         if (health <= 0) { Destroy(gameObject); }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider.CompareTag("Player"))
+        {
+            //Debug.Log("dealing " + damage + " damage!");
+            var player = collision.gameObject.GetComponent<CharacterHealth>();
+            player.TakeDamage(damage);
+            Destroy(this.gameObject);
+        }
     }
 }

@@ -6,11 +6,17 @@ using UnityEngine.InputSystem;
 
 public class Shoot : MonoBehaviour
 {
-    public Transform shootingPoint;
-    public GameObject bulletPrefab;
+
 
     private Coroutine currentCoroutine;
+
     private float oldPosX;
+
+    [SerializeField]
+    private GameObject bulletPrefab;
+
+    [SerializeField]
+    float shootInterval;
 
     [SerializeField]
     private InputActionReference shoot;
@@ -26,29 +32,21 @@ public class Shoot : MonoBehaviour
     {
         // SHOOT if enough time has passed to fire another bullet and mouse is pressed
         if (currentCoroutine == null && shoot.action.ReadValue<float>() > 0)
-        {
             currentCoroutine = StartCoroutine(DoShoot());
-        }
 
-        if (oldPosX < transform.position.x)
-        {
-            // If facing to the right, change shooting point
-            shootingPoint.transform.localPosition = new Vector3(0.5f, 0, 0);
-            oldPosX = transform.position.x;
-        }
-        else if (oldPosX > transform.position.x)
-        {
-            // If facing to the left, change shooting point
-            shootingPoint.transform.localPosition = new Vector3(-0.5f, 0, 0);
-            oldPosX = transform.position.x;
-        }
+        //if (oldPosX < transform.position.x)
+        //transform.localPosition = new Vector3(0.5f, 0, 0); // If facing to the right, change shooting point
+        //else
+        //transform.localPosition = new Vector3(-0.5f, 0, 0); // If facing to the left, change shooting point
+
+        //oldPosX = transform.position.x;
     }
 
     IEnumerator DoShoot()
     {
         // Spawn bullet
-        Instantiate(bulletPrefab, shootingPoint.position, Quaternion.identity);
-        yield return new WaitForSeconds(0.3f);
+        Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(shootInterval);
         currentCoroutine = null;
     }
 }

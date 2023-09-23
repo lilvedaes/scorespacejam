@@ -5,7 +5,11 @@ using UnityEngine.InputSystem;
 
 public class BulletMovement : MonoBehaviour
 {
-    public float movementSpeed;
+    [SerializeField]
+    float movementSpeed;
+    
+    [SerializeField]
+    int damage;
 
     private Rigidbody2D rb;
     private Vector3 mousePosition;
@@ -19,12 +23,11 @@ public class BulletMovement : MonoBehaviour
     {
         // Orientation of bullet
         mousePosition = Camera.main.ScreenToWorldPoint(pointerPosition.action.ReadValue<Vector2>());
-        direction = mousePosition - transform.position;
-        float angle = Vector2.SignedAngle(Vector2.right, direction);
-        transform.eulerAngles = new Vector3(0, 0, angle);
+        direction = (mousePosition - transform.position).normalized;
+        transform.up = direction;
 
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = transform.right * movementSpeed;
+        rb.velocity = transform.up * movementSpeed;
     }
 
     // Update is called once per frame
@@ -38,7 +41,7 @@ public class BulletMovement : MonoBehaviour
         EnemyBehaviour enemy = collision.GetComponent<EnemyBehaviour>();
         if (enemy != null)
         {
-            enemy.TakeDamage(20);
+            enemy.TakeDamage(damage);
             Destroy(gameObject);
         }
     }
