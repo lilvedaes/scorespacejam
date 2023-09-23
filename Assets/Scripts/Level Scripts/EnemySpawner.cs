@@ -43,11 +43,6 @@ public class EnemySpawner : MonoBehaviour
 
     }
 
-    void SpawnEnemies()
-    {
-
-    }
-
     IEnumerator SpawnEnemy(Transform enemy, Vector2 location, float interval)
     {
         // Spawn bullet
