@@ -15,6 +15,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         transform.localScale *= scaleFactor;
+        health = 100;
     }
 
     // Update is called once per frame
@@ -22,5 +23,12 @@ public class EnemyBehaviour : MonoBehaviour
     {
         var direction = (player.position - transform.position).normalized;
         transform.Translate(direction * speed * Time.deltaTime);
+    }
+
+    // Lowers the health of the enemy on bullet impact
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0) { Destroy(gameObject); }
     }
 }

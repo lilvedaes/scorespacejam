@@ -9,10 +9,8 @@ public class CharacterMovement : MonoBehaviour
 
     public float movementSpeed;
 
-    private Vector2 lookDirection;
-
     [SerializeField]
-    private InputActionReference movement, shoot, pointerPosition;
+    private InputActionReference movement;
 
     // Start is called before the first frame update
     void Start()
@@ -25,10 +23,5 @@ public class CharacterMovement : MonoBehaviour
     {
         // Movement
         transform.Translate(movement.action.ReadValue<Vector2>() * movementSpeed * Time.deltaTime);
-
-        // Orientation
-        //lookDirection = pointerPosition.action.ReadValue<Vector2>() - (Vector2)Camera.main.WorldToScreenPoint(transform.position);
-        //var angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
-        //transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 }
