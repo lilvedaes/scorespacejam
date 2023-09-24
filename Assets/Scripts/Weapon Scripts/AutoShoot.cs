@@ -11,6 +11,9 @@ public class AutoShoot : MonoBehaviour
 
     [SerializeField]
     float duration, fireInterval;
+
+    [SerializeField]
+    Transform offset;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +40,7 @@ public class AutoShoot : MonoBehaviour
                     }
                 }
                 var direction = (closest.position - transform.position).normalized;
-                transform.up = direction;
+                transform.right = direction;
                 currentCoroutine = StartCoroutine(DoShoot(direction));
             }
         }
@@ -46,8 +49,8 @@ public class AutoShoot : MonoBehaviour
 
     IEnumerator DoShoot(Vector2 dir)
     {
-        var newBullet = Instantiate(bullet, transform.position, Quaternion.identity);
-        newBullet.up = dir;
+        var newBullet = Instantiate(bullet, offset.position, Quaternion.identity);
+        newBullet.right = dir;
         yield return new WaitForSeconds(fireInterval);
         currentCoroutine = null;
     }

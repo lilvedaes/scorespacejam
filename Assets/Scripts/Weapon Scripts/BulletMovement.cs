@@ -24,10 +24,10 @@ public class BulletMovement : MonoBehaviour
         // Orientation of bullet
         mousePosition = Camera.main.ScreenToWorldPoint(pointerPosition.action.ReadValue<Vector2>());
         direction = (mousePosition - transform.position).normalized;
-        transform.up = direction;
+        transform.right = direction;
 
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity =  (Vector2)(transform.up * movementSpeed);
+        rb.velocity =  (Vector2)(transform.right * movementSpeed);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
