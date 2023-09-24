@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5768246959106632399}
   - component: {fileID: 5768246959106632384}
-  - component: {fileID: 5768246959106632398}
   - component: {fileID: 5768246959106632397}
+  - component: {fileID: 1901445184291352786}
   m_Layer: 8
   m_Name: Bird
   m_TagString: Enemy
@@ -86,7 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5768246959106632398
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,3 +117,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1901445184291352786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5768246959106632385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b7d0d082c3b3bd41b0a7584734709aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  scaleFactor: 0.8
+  health: 20
+  damage: 20
+  sidewaysTimeMin: 0.3
+  sidewaysTimeMax: 1
+  sidewaysDistanceMin: -0.7
+  sidewaysDistanceMax: 0.7
