@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
 
     public void AdvanceLevel()
     {
+        Debug.Log("advance level");
+        gameObject.BroadcastMessage("DestroyAllEnemies");
         curLevel++;
     }
 

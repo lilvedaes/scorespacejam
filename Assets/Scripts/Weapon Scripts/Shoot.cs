@@ -6,8 +6,6 @@ using UnityEngine.InputSystem;
 
 public class Shoot : MonoBehaviour
 {
-
-
     private Coroutine currentCoroutine;
 
     private float oldPosX;

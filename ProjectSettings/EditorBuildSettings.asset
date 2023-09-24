@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 3228cdcb68a049449a0a88e5319d9a2f
+  - enabled: 0
     path: Assets/Scenes/Master Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Daniela Dev.unity
+    guid: 701d4d80ae5b1664388ffd9384e882f1
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: bc42520d878076e408d3af0192c6fe16
+  - enabled: 1
+    path: Assets/Scenes/HighScores.unity
+    guid: f0ff995118e87094ebaeb1428ba7d591
   m_configObjects: {}

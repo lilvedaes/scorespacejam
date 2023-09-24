@@ -17,7 +17,7 @@ public class LionBehaviour : EnemyBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        player = GameObject.FindGameObjectWithTag("Player");
         transform.localScale *= scaleFactor;
         charging = false;
     }
@@ -28,7 +28,7 @@ public class LionBehaviour : EnemyBehaviour
         // Only update direction if not charging
         if (!charging)
         {
-            direction = (player.position - transform.position).normalized;
+            direction = (player.transform.position - transform.position).normalized;
         }
         transform.Translate(direction * speed * Time.deltaTime);
 

@@ -16,6 +16,8 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        current = null;
+        Time.timeScale = 1.0f;
         GM = GetComponent<GameManager>();
     }
 
@@ -46,7 +48,8 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator SpawnEnemy(Transform enemy, Vector2 location, float interval)
     {
         // Spawn bullet
-        Instantiate(enemy, location, Quaternion.identity);
+        GM.ChangeEnemyCount(1);
+        Instantiate(enemy, location, Quaternion.identity, transform);
         yield return new WaitForSeconds(interval);
         current = null;
     }

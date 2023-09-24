@@ -15,7 +15,7 @@ public class BirdBehaviour : EnemyBehaviour
     // Update is called once per frame
     void Update()
     {
-        var direction = (player.position - transform.position).normalized;
+        var direction = (player.transform.position - transform.position).normalized;
         transform.Translate(direction * speed * Time.deltaTime);
 
         // Look at player

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CharacterHealth : MonoBehaviour
 {
+    private ScenesManager scenesManager;
 
     [SerializeField]
     float HP;
@@ -17,6 +18,7 @@ public class CharacterHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scenesManager = GameObject.FindObjectOfType<ScenesManager>();
         startHealth = HP;
     }
 
@@ -27,6 +29,7 @@ public class CharacterHealth : MonoBehaviour
         {
             Debug.Log("Game Over!");
             Time.timeScale = 0f;
+            scenesManager.LoadGameOverScreen();
         }
     }
 
