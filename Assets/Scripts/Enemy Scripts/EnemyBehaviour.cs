@@ -33,7 +33,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
 
     // Lowers the health of the enemy on bullet impact
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         health -= damage;
         if (health <= 0) 
