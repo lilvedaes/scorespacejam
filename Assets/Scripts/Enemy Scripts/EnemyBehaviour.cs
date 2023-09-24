@@ -11,7 +11,7 @@ public class EnemyBehaviour : MonoBehaviour
     float speed, scaleFactor;
     
     [SerializeField]
-    int health, damage;
+    float health, damage;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
 
     // Lowers the health of the enemy on bullet impact
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         health -= damage;
         if (health <= 0) { Destroy(gameObject); }
