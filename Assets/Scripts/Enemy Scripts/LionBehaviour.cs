@@ -17,6 +17,11 @@ public class LionBehaviour : EnemyBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isDead = false;
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerScore = player.GetComponent<CharacterScore>();
+        transform.localScale *= scaleFactor;
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         charging = false;
     }
 
