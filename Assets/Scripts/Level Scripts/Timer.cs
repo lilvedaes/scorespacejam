@@ -49,4 +49,7 @@ public class Timer : MonoBehaviour
             secondsCount == 120 ||
             secondsCount == 150;
     }
+
+    public int GetTimerValue()
+    { return secondsCount; }
 }

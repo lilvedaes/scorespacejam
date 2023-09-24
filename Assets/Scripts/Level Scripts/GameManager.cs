@@ -1,3 +1,4 @@
+using LootLocker.Requests;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,6 +25,23 @@ public class GameManager : MonoBehaviour
     public int enemyCount
     {
         get; private set;
+    }
+
+    public void Start()
+    {
+        // Start lootlocker session
+        LootLockerSDKManager.StartGuestSession((response) =>
+        {
+            if (!response.success)
+            {
+                Debug.Log("error starting LootLocker session");
+
+                return;
+            }
+
+            ScenesManager.playerID = response.player_identifier;
+            Debug.Log("successfully started LootLocker session");
+        });
     }
 
     public void AdvanceLevel()

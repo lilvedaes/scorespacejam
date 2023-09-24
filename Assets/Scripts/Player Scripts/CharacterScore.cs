@@ -24,6 +24,9 @@ public class CharacterScore : MonoBehaviour
 
     }
 
+    public int GetKillCount()
+    { return killCount; }
+
     public void IncreaseKillCount()
     {
         killCount += 1;
