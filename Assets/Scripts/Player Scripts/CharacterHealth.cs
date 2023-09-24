@@ -25,7 +25,6 @@ public class CharacterHealth : MonoBehaviour
     {
         if (HP <= 0)
         {
-            Debug.Log("Game Over!");
             Time.timeScale = 0f;
         }
     }
@@ -33,6 +32,7 @@ public class CharacterHealth : MonoBehaviour
     public void TakeDamage(float amt)
     {
         HP -= amt;
-        HPDisplay.transform.localScale *= HP / startHealth;
+        HPDisplay.transform.localScale = Vector3.one * HP / startHealth;
+        Debug.Log(HP);
     }
 }

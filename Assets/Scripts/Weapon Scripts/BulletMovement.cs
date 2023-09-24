@@ -27,13 +27,7 @@ public class BulletMovement : MonoBehaviour
         transform.up = direction;
 
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = transform.up * movementSpeed;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        rb.velocity =  (Vector2)(transform.up * movementSpeed);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
