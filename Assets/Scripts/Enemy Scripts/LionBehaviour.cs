@@ -10,15 +10,13 @@ public class LionBehaviour : EnemyBehaviour
     private bool charging;
 
     [SerializeField]
-    private float chargeWaitTimeMin, chargeWaitTimeTimeMax, stopTime, chargeTime, speedModifier;
+    private float chargeWaitTimeMin, chargeWaitTimeMax, stopTime, chargeTime, speedModifier;
     [SerializeField]
-    private int damageModifier;
+    private float damageModifier;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        transform.localScale *= scaleFactor;
         charging = false;
     }
 
@@ -30,9 +28,9 @@ public class LionBehaviour : EnemyBehaviour
         {
             direction = (player.transform.position - transform.position).normalized;
         }
-        transform.Translate(direction * speed * Time.deltaTime);
+        transform.Translate(speed * Time.deltaTime * direction);
 
-        waitTime = Random.Range(chargeWaitTimeMin, chargeWaitTimeTimeMax);
+        waitTime = Random.Range(chargeWaitTimeMin, chargeWaitTimeMax);
         if (currentCoroutine == null)
             currentCoroutine = StartCoroutine(LionCharge(waitTime));
     }

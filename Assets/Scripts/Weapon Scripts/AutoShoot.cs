@@ -37,6 +37,7 @@ public class AutoShoot : MonoBehaviour
                     }
                 }
                 var direction = (closest.position - transform.position).normalized;
+                transform.up = direction;
                 currentCoroutine = StartCoroutine(DoShoot(direction));
             }
         }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5768246959106632384}
   - component: {fileID: 5768246959106632397}
   - component: {fileID: -1040229669214596880}
+  - component: {fileID: 5768246959106632398}
   m_Layer: 8
   m_Name: Lion
   m_TagString: Enemy
@@ -86,22 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5768246959106632398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5768246959106632385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13d58b14cd664b048a72d883817469f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
-  scaleFactor: 1.5
-  health: 20
-  damage: 20
 --- !u!58 &5768246959106632397
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -135,8 +120,24 @@ MonoBehaviour:
   health: 20
   damage: 30
   chargeWaitTimeMin: 5
-  chargeWaitTimeTimeMax: 7
+  chargeWaitTimeMax: 8
   stopTime: 1
-  chargeTime: 2
-  speedModifier: 3
-  damageModifier: 2
+  chargeTime: 1
+  speedModifier: 2
+  damageModifier: 1.5
+--- !u!114 &5768246959106632398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5768246959106632385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13d58b14cd664b048a72d883817469f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  scaleFactor: 1.5
+  health: 20
+  damage: 20

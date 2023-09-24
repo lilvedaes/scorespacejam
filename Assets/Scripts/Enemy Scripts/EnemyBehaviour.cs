@@ -14,11 +14,14 @@ public class EnemyBehaviour : MonoBehaviour
     protected float speed, scaleFactor;
     
     [SerializeField]
-    protected int health, damage;
+    protected float health, damage;
+
+    private bool isDead;
 
     // Start is called before the first frame update
     void Start()
     {
+        isDead = false;
         player = GameObject.FindGameObjectWithTag("Player");
         playerScore = player.GetComponent<CharacterScore>();
         transform.localScale *= scaleFactor;
@@ -36,8 +39,9 @@ public class EnemyBehaviour : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
-        if (health <= 0) 
+        if (health <= 0 && !isDead) 
         {
+            isDead = true;
             playerScore.IncreaseKillCount();
             GM.ChangeEnemyCount(-1);
             Destroy(gameObject); 

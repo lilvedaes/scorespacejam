@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 5
-  duration: 0.15
+  duration: 0.2
   damage: 0
   pointerPosition: {fileID: -3493568697716485263, guid: 7a0fd7ea0ca8fe544b14aa4b2c2237c8, type: 3}
 --- !u!1001 &570180879600029347

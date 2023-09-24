@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2922119828686784934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2922119828686784955}
+  - component: {fileID: 2922119828686784932}
+  - component: {fileID: 2922119828686784933}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2922119828686784955
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922119828686784934}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2922119828686784932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922119828686784934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec7d94e0ebe8688449ac4869fd1f9edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemies:
+  - Spawntable:
+    - {fileID: 5768246959106632399, guid: f1bc1ebc4d2b70f49b72d058cb42c4e8, type: 3}
+    spawnInterval: 0.5
+    maxPop: 20
+  - Spawntable:
+    - {fileID: 5768246959106632399, guid: 04691745b3fc56b4e9fd51ddcc3eedb6, type: 3}
+    spawnInterval: 0.2
+    maxPop: 50
+  - Spawntable:
+    - {fileID: 5768246959106632399, guid: da20a3ac03e4be74895f3dccc9f67846, type: 3}
+    spawnInterval: 0.7
+    maxPop: 20
+  - Spawntable:
+    - {fileID: 5768246959106632399, guid: b829e85ffa7a7d7428317a2f0a0599b6, type: 3}
+    spawnInterval: 0.5
+    maxPop: 20
+  - Spawntable:
+    - {fileID: 5768246959106632399, guid: 962fb1f74f3c32b44adf768eab5e5487, type: 3}
+    spawnInterval: 0.7
+    maxPop: 10
+  - Spawntable:
+    - {fileID: 5768246959106632399, guid: b829e85ffa7a7d7428317a2f0a0599b6, type: 3}
+    - {fileID: 5768246959106632399, guid: f1bc1ebc4d2b70f49b72d058cb42c4e8, type: 3}
+    - {fileID: 5768246959106632399, guid: 962fb1f74f3c32b44adf768eab5e5487, type: 3}
+    - {fileID: 5768246959106632399, guid: da20a3ac03e4be74895f3dccc9f67846, type: 3}
+    - {fileID: 5768246959106632399, guid: 04691745b3fc56b4e9fd51ddcc3eedb6, type: 3}
+    spawnInterval: 0.4
+    maxPop: 200
+--- !u!114 &2922119828686784933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922119828686784934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd322471ad0c49248a609f2dd3cedaa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minDistanceFromPlayer: 16
+  spawnBoxSize: 100
+  player: {fileID: 0}
