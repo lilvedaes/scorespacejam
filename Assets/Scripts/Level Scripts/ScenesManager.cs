@@ -3,43 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ScenesManager : MonoBehaviour
+public static class ScenesManager
 {
-    int currentScene;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        currentScene = SceneManager.GetActiveScene().buildIndex;
-        Debug.Log("current scene: " + currentScene.ToString());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-    public void LoadMainMenuScreen()
+    public static int finalScore;
+    public static string playerID;
+    public static void LoadMainMenuScreen()
     {
         SceneManager.LoadScene("MainMenu");
     }
-    public void LoadHighScoreScreen()
+    public static void LoadHighScoreScreen()
     {
         SceneManager.LoadScene("HighScores");
     }
 
-    public void LoadGameOverScreen()
+    public static void LoadGameOverScreen()
     {
         SceneManager.LoadScene("GameOver");
     }
 
-    public void QuitGame()
+    public static void QuitGame()
     {
         Application.Quit();
     }
 
-    public void LoadNextScene()
+    public static void LoadNextScene()
     {
+        var currentScene = SceneManager.GetActiveScene().buildIndex;
         if (currentScene < SceneManager.sceneCountInBuildSettings - 1)
             SceneManager.LoadScene(currentScene + 1);
         else

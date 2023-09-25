@@ -52,4 +52,7 @@ public class Timer : MonoBehaviour
             secondsCount == l4time ||
             secondsCount == l5time;
     }
+
+    public int GetTimerValue()
+    { return secondsCount; }
 }

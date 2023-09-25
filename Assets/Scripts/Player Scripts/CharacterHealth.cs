@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CharacterHealth : MonoBehaviour
 {
-    private ScenesManager scenesManager;
+    private int killCount, finalTimerVal;
 
     [SerializeField]
     float HP;
@@ -18,7 +18,6 @@ public class CharacterHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scenesManager = GameObject.FindObjectOfType<ScenesManager>();
         startHealth = HP;
     }
 
@@ -27,8 +26,11 @@ public class CharacterHealth : MonoBehaviour
     {
         if (HP <= 0)
         {
+            killCount = GetComponent<CharacterScore>().GetKillCount();
+            finalTimerVal = FindObjectOfType<Timer>().GetTimerValue();
+            ScenesManager.finalScore = killCount * finalTimerVal;
             Time.timeScale = 0f;
-            scenesManager.LoadGameOverScreen();
+            ScenesManager.LoadGameOverScreen();
         }
     }
 

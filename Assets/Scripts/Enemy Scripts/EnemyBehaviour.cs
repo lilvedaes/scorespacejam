@@ -8,7 +8,7 @@ public class EnemyBehaviour : MonoBehaviour
     protected GameObject player;
     protected CharacterScore playerScore;
 
-    private GameManager GM;
+    protected GameManager GM;
 
     [SerializeField]
     protected float speed, scaleFactor;
@@ -16,7 +16,7 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField]
     protected float health, damage;
 
-    private bool isDead;
+    protected bool isDead;
 
     // Start is called before the first frame update
     void Start()

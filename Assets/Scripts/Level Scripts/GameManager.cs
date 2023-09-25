@@ -1,3 +1,4 @@
+using LootLocker.Requests;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,7 +28,7 @@ public class GameManager : MonoBehaviour
     {
         get; private set;
     }
-
+    
     [SerializeField]
     GameObject primarySelect, secondarySelect, tertiarySelect;
 
@@ -57,6 +58,20 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+    
+      LootLockerSDKManager.StartGuestSession((response) =>
+        {
+            if (!response.success)
+            {
+                Debug.Log("error starting LootLocker session");
+
+                return;
+            }
+
+            ScenesManager.playerID = response.player_identifier;
+            Debug.Log("successfully started LootLocker session");
+        });
+        
         primarySelect.SetActive(false);
         secondarySelect.SetActive(false);
         tertiarySelect.SetActive(false);
@@ -66,8 +81,7 @@ public class GameManager : MonoBehaviour
 
         PlaynextDialog();
         dialogBox.SetActive(true);
-    }
-
+        
     public void AdvanceLevel()
     {
         Time.timeScale = 0f;

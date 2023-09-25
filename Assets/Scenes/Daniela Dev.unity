@@ -582,6 +582,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2922119828686784932, guid: 00919512347bb424f824e98d0501d3a8, type: 3}
+      propertyPath: Enemies.Array.data[0].Spawntable.Array.data[0]
+      value: 
+      objectReference: {fileID: 5768246959106632399, guid: f1bc1ebc4d2b70f49b72d058cb42c4e8, type: 3}
     - target: {fileID: 2922119828686784933, guid: 00919512347bb424f824e98d0501d3a8, type: 3}
       propertyPath: player
       value: 
