@@ -7,6 +7,9 @@ public class Timer : MonoBehaviour
 {
     public TMP_Text timerText;
 
+    [SerializeField]
+    float l1time, l2time, l3time, l4time, l5time;
+
     private Coroutine currentCoroutine;
     private int secondsCount;
     private GameManager GM;
@@ -43,11 +46,11 @@ public class Timer : MonoBehaviour
 
     bool isTimeToAdvanceLevel(int secondsCount)
     {
-        return secondsCount == 30 ||
-            secondsCount == 60 ||
-            secondsCount == 90 ||
-            secondsCount == 120 ||
-            secondsCount == 150;
+        return secondsCount == l1time ||
+            secondsCount == l2time ||
+            secondsCount == l3time ||
+            secondsCount == l4time ||
+            secondsCount == l5time;
     }
 
     public int GetTimerValue()

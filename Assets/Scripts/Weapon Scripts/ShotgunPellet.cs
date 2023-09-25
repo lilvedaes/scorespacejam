@@ -16,7 +16,7 @@ public class ShotgunPellet : MonoBehaviour
         if(transform.parent)
             rb.velocity = transform.parent.GetComponent<Rigidbody2D>().velocity + (Vector2)(transform.up * speed);
         else
-            rb.velocity = transform.up * speed;
+            rb.velocity = transform.right * speed;
         StartCoroutine(SelfDestruct());
     }
 

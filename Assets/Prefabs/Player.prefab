@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 8501194509701542674}
   - component: {fileID: 8501194509701542672}
   - component: {fileID: 8501194509701542675}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8501194509701542674
 Transform:
   m_ObjectHideFlags: 0
@@ -80,13 +80,13 @@ GameObject:
   - component: {fileID: 8501194510949128855}
   - component: {fileID: 8501194510949128853}
   - component: {fileID: 8501194510949128852}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8501194510949128855
 Transform:
   m_ObjectHideFlags: 0
@@ -149,13 +149,13 @@ GameObject:
   - component: {fileID: 8501194510991998801}
   - component: {fileID: 8501194510991998807}
   - component: {fileID: 8501194510991998806}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Turret Layer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8501194510991998801
 Transform:
   m_ObjectHideFlags: 0
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 8501194511080534903}
   - component: {fileID: 8501194511080534902}
   - component: {fileID: 8501194511080534897}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 8501194511230704812}
   - component: {fileID: 8501194511230704786}
   - component: {fileID: 8501194511230704813}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Machine Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -461,7 +461,7 @@ GameObject:
   - component: {fileID: 8501194511347225652}
   - component: {fileID: 8501194511347225658}
   - component: {fileID: 8501194511347225653}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mine Layer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -530,13 +530,13 @@ GameObject:
   - component: {fileID: 8501194511371514646}
   - component: {fileID: 8501194511371514644}
   - component: {fileID: 8501194511371514647}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RPG Launcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8501194511371514646
 Transform:
   m_ObjectHideFlags: 0
@@ -599,13 +599,13 @@ GameObject:
   - component: {fileID: 8501194511401782506}
   - component: {fileID: 8501194511401782504}
   - component: {fileID: 8501194511401782507}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8501194511401782506
 Transform:
   m_ObjectHideFlags: 0
