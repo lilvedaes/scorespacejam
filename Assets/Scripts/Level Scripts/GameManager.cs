@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 
@@ -39,6 +40,21 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     Image primary, secondary, tertiary;
 
+    [System.Serializable]
+    public class Dialog
+    {
+        public string[] lines;
+    }
+
+    public Dialog[] cutscenes;
+    int curLine;
+
+    [SerializeField]
+    TextMeshProUGUI dialogHolder;
+
+    [SerializeField]
+    GameObject dialogBox;
+
     private void Start()
     {
         primarySelect.SetActive(false);
@@ -47,12 +63,17 @@ public class GameManager : MonoBehaviour
 
         secondary.gameObject.SetActive(false);
         tertiary.gameObject.SetActive(false);
+
+        PlaynextDialog();
+        dialogBox.SetActive(true);
     }
 
     public void AdvanceLevel()
     {
+        Time.timeScale = 0f;
         Debug.Log("advance level");
         gameObject.BroadcastMessage("DestroyAllEnemies");
+        dialogBox.SetActive(true);
         curLevel++;
     }
 
@@ -108,5 +129,35 @@ public class GameManager : MonoBehaviour
         tertiary.gameObject.SetActive(true);
         tertiary.sprite = turretSprite;
         Time.timeScale = 1;
+    }
+
+    public void PlaynextDialog()
+    {
+        Time.timeScale = 0f;
+        if(curLine < cutscenes[curLevel].lines.Length)
+        {
+            dialogHolder.text = cutscenes[curLevel].lines[curLine];
+            curLine++;
+        }
+        else
+        {
+            curLine = 0;
+            dialogBox.SetActive(false);
+            switch(curLevel)
+            {
+                case 1:
+                    secondarySelect.gameObject.SetActive(true);
+                    break;
+                case 2:
+                    primarySelect.gameObject.SetActive(true);
+                    break;
+                case 5:
+                    tertiarySelect.gameObject.SetActive(true);
+                    break;
+                default:
+                    Time.timeScale = 1;
+                    break;
+            }
+        }
     }
 }
